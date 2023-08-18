@@ -1,3 +1,39 @@
+# AquReco
+## Introduction 
+This project is an application designed to recommend aquarium layout products for beginners.  
+It is intended for aquarium stores.  
+It is still under development.  
+
+## How to use
+### **For store users** :The following actions are primarily available
+-Browsing the product list  
+-Suggestions for products based on tank size  
+-Inquiries  
+
+### **For store staff** :The following actions are primarily available
+-Checking inquiry content  
+-Editing the product list  
+-Editing user information  
+-Editing product master data  
+
+### login Data
+1.For store users  
+  mail:root@test.com  
+  pass:testtest  
+2.For store staff  
+  mail:admin@test.com  
+  pass:testtest  
+
+## Development Environment
+-XAMMP  
+-MYSQL   
+-PHP  
+    -Php Version: 8.2.4   
+    -Laravel Version: 10.15.0   
+    -Laravel Locale: "en"   
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

@@ -10,7 +10,7 @@ It is still under development.
 -Suggestions for products based on tank size
 -Inquiries
 
-###**For store staff** :The following actions are primarily available
+### **For store staff ** :The following actions are primarily available
 -Checking inquiry content
 -Editing the product list
 -Editing user information

@@ -7,9 +7,11 @@
             <h2>水槽のサイズに合わせてご提案。</h2>
             <h2>お魚の行動の邪魔にならないように大きさ・数・形状には注意しましょう。</h2>
         </div>
+        <!--
         <div class="selectplantlinkbutton">
             <a href="/plants" class="button11">水草を選択する</a>
         </div>
+        -->
         <!--
         <div class="selectplantlinklist">
             <div v-for="(plant) in displayPlantArray" :key="plant.id">

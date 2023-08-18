@@ -48,7 +48,6 @@
                         
                     </td>
                 <td>
-                    <button @click="editContact(contact)">Edit</button>
                     <button @click="deleteContact(contact.contact_id)">Delete</button>
                 </td>
                 </tr>
@@ -82,15 +81,21 @@ export default {
                 this.contactData = [];
             }
         },
-        async deleteContact(contact) {
+        async deleteContact(contact_id) {
             try {
-                // サーバー側に削除処理を送信する処理
-                // 例えば、axios.delete()を使用するなど
-                console.log("Delete contact:", contact);
+                const response = await axios.delete(`/adcontacts/${contact_id}`);
+                
+                if(response.data.message) {
+                    // ここで成功メッセージを表示する方法を選択します（例：alert、toast通知など）
+                    alert(response.data.message);
+                }
+
+                this.getContact(); // リストを更新
+
             } catch (error) {
                 console.error(error);
             }
-            },
+        },
     },
     async mounted() {
         await this.getContact();

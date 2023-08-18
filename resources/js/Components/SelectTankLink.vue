@@ -6,9 +6,11 @@
         <div class="selecttankslinkmessage">
             <h2>設置する場所に合わせて選択しましょう</h2>
         </div>
+        <!--
         <div class="selecttankslinkbutton">
             <a href="/tankss" class="button11">水槽を選択する</a>
         </div>
+        -->
         <div class="selecttankslinklist">
             <div v-if="selectedItems.length > 0">
                 <div class="item" v-for="(item, index) in selectedItems" :key="index">

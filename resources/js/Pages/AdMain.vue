@@ -1,0 +1,8 @@
+<template>
+    <AdHeader />
+    <AdMainMenu />
+
+
+
+
+</template>

@@ -1,0 +1,235 @@
+<?php
+
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use Inertia\Inertia\vue3;
+
+use Laravel\Fortify\Fortify;
+use App\Http\Controllers\PDFController;
+
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+use App\Http\Controllers\Auth\LoginController;
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+});
+
+
+/**
+ * test用のルート
+ * 
+
+Route::get('/test', function() {
+    return 'This is a test route!';
+});
+*/
+
+/**
+ * PDF test用のルート
+ */
+Route::get('/pdf', [PDFController::class, 'generatePdf']);
+
+
+/**
+ * Route for １Main
+ */
+Route::get('/', function (){return Inertia::render('Main');});
+
+/**
+ * Route for 2LogIn(Page)
+ * Route for Login(Signin)
+ */
+Route::get('/LoginPage', function(){return Inertia::render('Auth/Login');})->name('loginpage');
+
+
+/**
+ * Route for 2.1ResetPassword
+ */
+Route::get('/ResetPassword', function(){return Inertia::render('Auth/ResetPassword');})->name('ResetPassword');
+
+/**
+ * Route for 3Register
+ */
+Route::get('/Register', function(){return Inertia::render('Auth/Register');})->name('register');
+
+/**
+ * Route for ４TopPage
+ */
+Route::get('/TopPage', function (){return Inertia::render('TopPage');});
+
+/**
+ * Route for 5ProductList
+ */
+Route::get('/ProducstList', function(){return Inertia::render('ProductsList');});
+
+/**
+ * Route for 6Tanks
+ */
+Route::get('/Tanks', function(){return Inertia::render('Tanks');});
+
+/**
+ * Route for 7Woods
+ */
+Route::get('/Woods', function(){return Inertia::render('Woods');});
+
+/**
+ * Route for 8Stones
+ */
+Route::get('/Stones', function(){return Inertia::render('Stones');});
+
+/**
+ * Route for 9Fishes
+ */
+Route::get('/Fishes', function(){return Inertia::render('Fishes');});
+
+/**
+ * Route for 10Plants
+ */
+Route::get('/Plants', function(){return Inertia::render('Plants');});
+
+/**
+ * Route for 11Products
+ */
+Route::get('/Products', function(){return Inertia::render('Products');});
+
+/**
+ * Route for 12Fish
+ */
+Route::get('/Fish', function(){return Inertia::render('Fish');});
+
+/**
+ * Route for 13Concept
+ */
+Route::get('/Concept', function(){return Inertia::render('Concept');});
+
+/**
+ * Route for 14Layout
+ */
+Route::get('/Layout', function(){return Inertia::render('Layout');});
+
+/**
+ * Route for 15Fishlist
+ */
+Route::get('/FishList', function(){return Inertia::render('FishList');});
+
+/**
+ * Route for 16FishPicks
+ */
+Route::get('/FishPicks', function(){return Inertia::render('FishPicks');});
+
+/**
+ * Route for 17Recommend
+ */
+Route::get('/Recommend', function(){return Inertia::render('Recommend');});
+
+/**
+ * Route for 18Input
+ */
+Route::get('/Input', function(){return Inertia::render('Input');});
+
+/**
+ * Route for 19Favorite
+ */
+Route::get('/Favorite', function(){return Inertia::render('Favorite');});
+
+/**
+ * Route for 20Trouble
+ */
+Route::get('/Trouble', function(){return Inertia::render('Trouble');});
+
+/**
+ * Route for 21Measure
+ */
+Route::get('/Measure', function(){return Inertia::render('Measure');});
+
+/**
+ * Route for 22Contact
+ */
+Route::get('/Contact', function(){return Inertia::render('Contact');});
+
+/**
+ * Route for 23Confirm
+ */
+Route::get('/Confirm', function(){return Inertia::render('Confirm');});
+
+/**
+ * Route for 24Complete
+ */
+Route::get('/Complete', function(){return Inertia::render('Complete');});
+
+/**
+ * Route for 25Order
+ */
+Route::get('/Order', function(){return Inertia::render('Order');});
+
+/**
+ * Route for 26Noticet to Visit
+ */
+Route::get('/NoticetoVisit', function(){return Inertia::render('NoticetoVisit');});
+
+/**
+ * Route for AAdTop
+ */
+Route::get('/AdTop', function(){return Inertia::render('AdTop');});
+
+/**
+ * Route for DAdMain
+ */
+Route::get('/AdMain', function(){return Inertia::render('AdMain');});
+
+/**
+ * Route for EAdContact
+ */
+Route::get('/AdContact', function(){return Inertia::render('AdContact');});
+
+/**
+ * Route for FAdCustomer
+ */
+Route::get('/AdCustomer', function(){return Inertia::render('AdCustomer');});
+
+/**
+ * Route for HAdProducts
+ */
+Route::get('/AdProducts', function(){return Inertia::render('AdProducts');});
+
+
+/**
+ * Route for IAdMaster
+ */
+Route::get('/AdMaster', function(){return Inertia::render('AdMaster');});
+
+/**
+ * Route for Ztests
+ * 
+ */
+Route::get('/test', [TestController::class,'test']);

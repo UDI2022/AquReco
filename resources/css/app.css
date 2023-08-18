@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+.buttton {
+    display: flex;
+    justify-content: center;
+    margin: 10px 20%;
+    padding: 0px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+}

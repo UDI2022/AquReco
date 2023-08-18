@@ -17,12 +17,12 @@ It is still under development.
 -Editing product master data
 
 ### login Data
-1.For store users
-    mail:root@test.com
-    pass:testtest
-2.For store staff
-    mail:admin@test.com
-    pass:testtest
+1.For store users　　
+    mail:root@test.com　　
+    pass:testtest　　
+2.For store staff　　
+    mail:admin@test.com　　
+    pass:testtest　　
 
 ## Development Environment
 -XAMMP

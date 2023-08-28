@@ -1,50 +1,3 @@
-<template>
-    <div id="selectstonelink">
-        <div class="selectstonelinktitle">
-            <h1>入れる石を選択</h1>
-        </div>
-        <div class="selectstonelinkmessage">
-            <h2>水槽のサイズに合わせてご提案。</h2>
-            <h2>お魚の行動の邪魔にならないように大きさ・数・形状には注意しましょう。</h2>
-        </div>
-        <!--
-        <div class="selectstonelinkbutton">
-            <a href="/stones" class="button11">石を選択する</a>
-        </div>
-        -->
-        <div class="selectstonelinklist">
-            <div v-for="(stone) in displayStoneArray" :key="stone.id">
-
-                <div class="stone-container">
-                    <!--img-->
-                    <img :src="getStoneImageSrc(stone.stone_id)" :alt="stone.imageAltText">
-                </div>
-                <Favorite_stone :stoneId="stone.stone_id" :userEmail="userEmail" @favorite-click="toggleFavorite(stone.stone_id)"/>
-                <div class="stoneinfo">
-                    <div class="stonename">
-                        {{ stone.name}}
-                    </div>
-                    <div class="stoneprice">
-                        {{ stone.price }}
-                    </div>
-                    <div class="select-count">
-                        <label>個数</label>
-                        <select @change="updateSelectedCount(stone.stone_id, $event)">
-                            <option value="0">0 個</option>
-                            <option v-for="n in Math.floor(localStcost / stone.locost)" :key="n" :value="n">{{ n }} 個</option>
-                        </select>
-                        <!--
-                        <div>{{ Math.floor(localStcost / stone.locost) }}個</div>
-                        <div>Debug: localStcost = {{ localStcost }}</div>
-                        <div>Debug: stone.locost = {{ stone.locost }}</div>
-                        <div>Debug: totalStcost= {{ totalStcost }}</div>
-                        -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>
 
 <script>
 import axios from "axios";
@@ -138,6 +91,54 @@ export default {
 };
 
 </script>
+<template>
+    <div id="selectstonelink">
+        <div class="selectstonelinktitle">
+            <h1>入れる石を選択</h1>
+        </div>
+        <div class="selectstonelinkmessage">
+            <h2>水槽のサイズに合わせてご提案。</h2>
+            <h2>お魚の行動の邪魔にならないように大きさ・数・形状には注意しましょう。</h2>
+        </div>
+        <!--
+        <div class="selectstonelinkbutton">
+            <a href="/stones" class="button11">石を選択する</a>
+        </div>
+        -->
+        <div class="selectstonelinklist">
+            <div v-for="(stone) in displayStoneArray" :key="stone.id">
+
+                <div class="stone-container">
+                    <!--img-->
+                    <img :src="getStoneImageSrc(stone.stone_id)" :alt="stone.imageAltText">
+                </div>
+                <Favorite_stone :stoneId="stone.stone_id" :userEmail="userEmail" @favorite-click="toggleFavorite(stone.stone_id)"/>
+                <div class="stoneinfo">
+                    <div class="stonename">
+                        {{ stone.name}}
+                    </div>
+                    <div class="stoneprice">
+                        {{ stone.price }}
+                    </div>
+                    <div class="select-count">
+                        <label>個数</label>
+                        <select @change="updateSelectedCount(stone.stone_id, $event)">
+                            <option value="0">0 個</option>
+                            <option v-for="n in Math.floor(localStcost / stone.locost)" :key="n" :value="n">{{ n }} 個</option>
+                        </select>
+                        <!--
+                        <div>{{ Math.floor(localStcost / stone.locost) }}個</div>
+                        <div>Debug: localStcost = {{ localStcost }}</div>
+                        <div>Debug: stone.locost = {{ stone.locost }}</div>
+                        <div>Debug: totalStcost= {{ totalStcost }}</div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
 
 <style>
     #selectstonelink::before{

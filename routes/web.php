@@ -14,8 +14,10 @@ use App\Http\Controllers\PlantsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CompleteController;
 use App\Http\Controllers\FishController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Middleware\CheckUserRole;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -327,3 +329,8 @@ Route::get('/AdMaster', function(){return Inertia::render('AdMaster');});
  * Route for editContact
  */
 Route::resource('adcon', UserController::class);
+
+/**
+ * Route for delete contact data
+ */
+Route::delete('/adcontacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');

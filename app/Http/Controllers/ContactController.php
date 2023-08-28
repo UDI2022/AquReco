@@ -18,5 +18,12 @@ class ContactController extends Controller
         $contacts = AdContact::all();
         return response()->json($contacts);
     }
+    public function destroy($id)
+    {
+        $contact = AdContact::findOrFail($id);
+        $contact->delete();
+
+        return response()->json(['message' => 'Contact deleted successfully.']);
+    }
 
 }

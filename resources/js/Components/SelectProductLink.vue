@@ -7,9 +7,11 @@
             <h2>水槽の環境維持にを根底から支えます。</h2>
             <h2>ご予算、コンセプト、スペースに合わせて決定しましょう。</h2>
         </div>
+        <!--
         <div class="selectproductlinkbutton">
             <a href="/product" class="button11">備品を選択する</a>
         </div>
+        -->
         <div class="selectproductlinklist">
             <div v-if="selectedItems.length > 0">
                 <div class="item" v-for="(item, index) in selectedItems" :key="index">

@@ -1,13 +1,16 @@
 <template>
     <div id="adheader">
-        <h1>AQURECO</h1>
-        <adiconFish />
+        <a href="/">
+            <h1>AQURECO</h1>
+        </a>
+            <adiconFish />
+
     </div>
 
 </template>
 <style>
 #adheader{
-    font-size: 12vw;
+    font-size: 10vw;
     background-color: #78C1F3;
     color: #fff;
     font-weight:900;
